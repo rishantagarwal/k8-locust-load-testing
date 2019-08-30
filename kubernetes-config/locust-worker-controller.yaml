@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
         - name: locust-worker
-          image: asia.gcr.io/tegaki-benchmark-prio-queue/locust-tasks:latest
+          image: rishantagarwal/locust-tasks:latest
           imagePullPolicy: Always
           env:
             - name: LOCUST_MODE
