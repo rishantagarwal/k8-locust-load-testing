@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nginx-service
+  labels:
+    app: nginx-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-service
+  template:
+    metadata:
+      labels:
+        app: nginx-service
+    spec:
+      containers:
+      - name: nginx-service
+        image: asia.gcr.io/tegaki-benchmark-prio-queue/nginx-rate-limiting-testing:latest
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8080
